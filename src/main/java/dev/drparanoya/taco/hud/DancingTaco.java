@@ -1,15 +1,11 @@
 package dev.drparanoya.taco.hud;
 
 import dev.drparanoya.taco.Taco;
-import meteordevelopment.meteorclient.renderer.GL;
-import meteordevelopment.meteorclient.renderer.Renderer2D;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.hud.HudElement;
 import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
 import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import meteordevelopment.meteorclient.utils.render.color.Color;
 import meteordevelopment.meteorclient.utils.render.color.SettingColor;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 public class DancingTaco extends HudElement {
@@ -67,11 +63,8 @@ public class DancingTaco extends HudElement {
 
     @Override
     public void render(HudRenderer renderer) {
-        setSize(192 * scale.get(), 133 * scale.get());
-        MatrixStack matrixStack = new MatrixStack();
-        GL.bindTexture(TACOS[elem]);
-        Renderer2D.TEXTURE.begin();
-        Renderer2D.TEXTURE.texQuad(x, y, 192 * scale.get(), 133 * scale.get(), color.get());
-        Renderer2D.TEXTURE.render(matrixStack);
+		double x = this.x, y = this.y;
+		setSize(192 * scale.get(), 133 * scale.get());
+        renderer.texture(TACOS[elem], x, y, 192 * scale.get(), 133 * scale.get(), color.get());
     }
 }
