@@ -1,7 +1,7 @@
 package dev.drparanoya.taco;
 
 import com.mojang.logging.LogUtils;
-import dev.drparanoya.taco.hud.DancingTaco;
+import dev.drparanoya.taco.hud.*;
 import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.hud.Hud;
@@ -17,6 +17,7 @@ public class Taco extends MeteorAddon {
     public void onInitialize() {
         LOG.info(".taco");
         Hud.get().register(DancingTaco.INFO);
+        Hud.get().register(SubwaySurfers.INFO);
     }
 
     @Override
