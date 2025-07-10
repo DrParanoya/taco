@@ -21,4 +21,4 @@ jobs:
           java-version: 21
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradle build
