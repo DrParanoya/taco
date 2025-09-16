@@ -40,7 +40,7 @@ public class AntiStrip extends Module {
 
     @EventHandler
     private void onInteractBlock(InteractBlockEvent event) {
-        int slot = mc.player.getInventory().selectedSlot;
+        int slot = mc.player.getInventory().getSelectedSlot();
         if (mc.player.getInventory().getStack(slot).isIn(ItemTags.AXES) &&
             logTypes.get().contains(mc.world.getBlockState(event.result.getBlockPos()).getBlock()))
             event.cancel();
